@@ -1,6 +1,6 @@
 // components/Hero.tsx
 "use client";
-import React, { useRef, useEffect, useState, createContext, useContext, useMemo } from "react";
+import React, { useRef, useEffect, useState, createContext, useContext } from "react";
 import { motion } from "framer-motion";
 import SelfDrawingShapes from "./SelfDrawingShapes";
 

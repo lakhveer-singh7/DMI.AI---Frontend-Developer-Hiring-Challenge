@@ -1,0 +1,1566 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+body, html {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Magnetic Headline Styles */
+.stylish-headline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, 
+    #ff006e 0%, 
+    #8338ec 20%, 
+    #3a86ff 40%, 
+    #06ffa5 60%, 
+    #ffbe0b 80%, 
+    #fb5607 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: rainbowShift 6s ease-in-out infinite, glowPulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 110, 0.3)) 
+          drop-shadow(0 0 40px rgba(131, 56, 236, 0.2))
+          drop-shadow(0 0 60px rgba(6, 255, 165, 0.1))
+          drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  position: relative;
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.stylish-headline::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, 
+    #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607, #ff006e
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerEffect 4s ease-in-out infinite;
+  opacity: 0.7;
+  filter: blur(0.5px);
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .stylish-headline {
+    font-size: 3.125rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stylish-headline {
+    font-size: 3.75rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .stylish-headline {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+  }
+}
+
+@media (min-width: 1536px) {
+  .stylish-headline {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+  }
+}
+
+@keyframes rainbowShift {
+  0%, 100% {
+    background-position: 0% 50%;
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 20px rgba(255, 0, 110, 0.3)) 
+            drop-shadow(0 0 40px rgba(131, 56, 236, 0.2))
+            drop-shadow(0 0 60px rgba(6, 255, 165, 0.1))
+            drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  25% {
+    background-position: 100% 50%;
+    transform: scale(1.02) rotate(0.5deg);
+    filter: drop-shadow(0 0 25px rgba(255, 0, 110, 0.4)) 
+            drop-shadow(0 0 50px rgba(131, 56, 236, 0.3))
+            drop-shadow(0 0 75px rgba(6, 255, 165, 0.2))
+            drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+  }
+  50% {
+    background-position: 100% 100%;
+    transform: scale(1.01) rotate(-0.3deg);
+    filter: drop-shadow(0 0 30px rgba(255, 0, 110, 0.5)) 
+            drop-shadow(0 0 60px rgba(131, 56, 236, 0.4))
+            drop-shadow(0 0 90px rgba(6, 255, 165, 0.3))
+            drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+  75% {
+    background-position: 0% 100%;
+    transform: scale(1.02) rotate(0.2deg);
+    filter: drop-shadow(0 0 25px rgba(255, 0, 110, 0.4)) 
+            drop-shadow(0 0 50px rgba(131, 56, 236, 0.3))
+            drop-shadow(0 0 75px rgba(6, 255, 165, 0.2))
+            drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 110, 0.3)) 
+            drop-shadow(0 0 40px rgba(131, 56, 236, 0.2))
+            drop-shadow(0 0 60px rgba(6, 255, 165, 0.1))
+            drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(255, 0, 110, 0.6)) 
+            drop-shadow(0 0 70px rgba(131, 56, 236, 0.5))
+            drop-shadow(0 0 105px rgba(6, 255, 165, 0.4))
+            drop-shadow(0 0 140px rgba(255, 190, 11, 0.3))
+            drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+  }
+}
+
+@keyframes shimmerEffect {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 0.7;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.9;
+  }
+}
+
+/* Holographic Button with 3D Effect */
+.holographic-button {
+  background: linear-gradient(135deg, #e30613, #dc2626, #b91c1c);
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 12px 35px rgba(227, 6, 19, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  overflow: hidden;
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  min-width: 200px;
+}
+
+.holographic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: conic-gradient(
+    from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    transparent 0deg,
+    rgba(255, 255, 255, 0.8) 60deg,
+    rgba(227, 6, 19, 0.9) 120deg,
+    rgba(255, 255, 255, 0.8) 180deg,
+    transparent 240deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+.holographic-button:active::before {
+  opacity: 1;
+  animation: borderLightTrack 0.6s ease-out;
+}
+
+@keyframes borderLightTrack {
+  0% {
+    background: conic-gradient(
+      from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 30deg,
+      rgba(227, 6, 19, 1) 60deg,
+      rgba(255, 255, 255, 0.9) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+    filter: brightness(1.2) contrast(1.1);
+  }
+  50% {
+    background: conic-gradient(
+      from 180deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 30deg,
+      rgba(227, 6, 19, 1) 60deg,
+      rgba(255, 255, 255, 0.9) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+    filter: brightness(1.5) contrast(1.2);
+  }
+  100% {
+    background: conic-gradient(
+      from 360deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 30deg,
+      rgba(227, 6, 19, 1) 60deg,
+      rgba(255, 255, 255, 0.9) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+    filter: brightness(1) contrast(1);
+    opacity: 0;
+  }
+}
+
+.holographic-button:active .borderLightTrack {
+  animation: borderLightTrackGreen 0.6s ease-out;
+}
+
+@keyframes borderLightTrackGreen {
+  0% {
+    background: conic-gradient(
+      from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 30deg,
+      rgba(6, 255, 165, 1) 60deg,
+      rgba(255, 255, 255, 0.9) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+    filter: brightness(1.2) contrast(1.1);
+  }
+  50% {
+    background: conic-gradient(
+      from 180deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 30deg,
+      rgba(6, 255, 165, 1) 60deg,
+      rgba(255, 255, 255, 0.9) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+    filter: brightness(1.5) contrast(1.2);
+  }
+  100% {
+    background: conic-gradient(
+      from 360deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 30deg,
+      rgba(6, 255, 165, 1) 60deg,
+      rgba(255, 255, 255, 0.9) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+    filter: brightness(1) contrast(1);
+    opacity: 0;
+  }
+}
+
+.holographic-button:hover {
+  transform: perspective(1000px) rotateX(-5deg) rotateY(2deg) translateY(-6px);
+  box-shadow: 
+    0 25px 50px rgba(227, 6, 19, 0.6), 
+    0 0 40px rgba(6, 255, 165, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #3a86ff, #06ffa5, #00d4aa);
+  border-color: rgba(6, 255, 165, 0.5);
+}
+
+.holographic-button:active {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) translateY(-2px);
+  box-shadow: 
+    0 15px 30px rgba(227, 6, 19, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #06ffa5, #00d4aa, #00b894);
+  border-color: rgba(6, 255, 165, 0.4);
+}
+
+.holographic-button:active::before {
+  opacity: 1;
+  animation: borderLightTrack 0.6s ease-out;
+  background: conic-gradient(
+    from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    transparent 0deg,
+    rgba(255, 255, 255, 0.9) 30deg,
+    rgba(6, 255, 165, 1) 60deg,
+    rgba(255, 255, 255, 0.9) 90deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+}
+
+.holographic-scan-lines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.1) 3px,
+    rgba(255, 255, 255, 0.1) 6px
+  );
+  animation: scanLines 0.5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateZ(1px);
+}
+
+.holographic-button:hover .holographic-scan-lines {
+  opacity: 1;
+}
+
+@keyframes scanLines {
+  0% { transform: translateZ(1px) translateY(0); }
+  100% { transform: translateZ(1px) translateY(6px); }
+}
+
+.holographic-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(227, 6, 19, 0.8) 0%, transparent 70%);
+  animation: holographicPulse 2s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateZ(2px);
+}
+
+.holographic-button:hover .holographic-glow {
+  opacity: 1;
+}
+
+@keyframes holographicPulse {
+  0%, 100% { opacity: 0.5; transform: translateZ(2px) scale(1); }
+  50% { opacity: 1; transform: translateZ(2px) scale(1.1); }
+}
+
+.holographic-element {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  animation: holographicFloat 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateZ(3px);
+}
+
+.holographic-button:hover .holographic-element {
+  opacity: 1;
+}
+
+@keyframes holographicFloat {
+  0%, 100% { 
+    transform: translateZ(3px) translateY(0px) scale(1) rotate(0deg); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateZ(3px) translateY(-20px) scale(1.5) rotate(180deg); 
+    opacity: 1;
+  }
+}
+
+/* Liquid Metal Button with 3D Effect */
+.liquid-metal-button {
+  background: linear-gradient(135deg, #374151, #6b7280, #9ca3af);
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 12px 35px rgba(55, 65, 81, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  overflow: hidden;
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  min-width: 200px;
+}
+
+.liquid-metal-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: conic-gradient(
+    from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    transparent 0deg,
+    rgba(255, 255, 255, 0.9) 45deg,
+    rgba(227, 6, 19, 1) 90deg,
+    rgba(255, 255, 255, 0.9) 135deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+.liquid-metal-button:active::before {
+  opacity: 1;
+  animation: liquidBorderLight 0.8s ease-out;
+}
+
+@keyframes liquidBorderLight {
+  0% {
+    background: conic-gradient(
+      from 0deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 45deg,
+      rgba(227, 6, 19, 1) 90deg,
+      rgba(255, 255, 255, 0.9) 135deg,
+      transparent 180deg,
+      transparent 360deg
+    );
+    filter: blur(0px) brightness(1.2);
+  }
+  25% {
+    background: conic-gradient(
+      from 90deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 45deg,
+      rgba(227, 6, 19, 1) 90deg,
+      rgba(255, 255, 255, 0.9) 135deg,
+      transparent 180deg,
+      transparent 360deg
+    );
+    filter: blur(1px) brightness(1.4);
+  }
+  50% {
+    background: conic-gradient(
+      from 180deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 45deg,
+      rgba(227, 6, 19, 1) 90deg,
+      rgba(255, 255, 255, 0.9) 135deg,
+      transparent 180deg,
+      transparent 360deg
+    );
+    filter: blur(2px) brightness(1.6);
+  }
+  75% {
+    background: conic-gradient(
+      from 270deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 45deg,
+      rgba(227, 6, 19, 1) 90deg,
+      rgba(255, 255, 255, 0.9) 135deg,
+      transparent 180deg,
+      transparent 360deg
+    );
+    filter: blur(1px) brightness(1.4);
+  }
+  100% {
+    background: conic-gradient(
+      from 360deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      transparent 0deg,
+      rgba(255, 255, 255, 0.9) 45deg,
+      rgba(227, 6, 19, 1) 90deg,
+      rgba(255, 255, 255, 0.9) 135deg,
+      transparent 180deg,
+      transparent 360deg
+    );
+    filter: blur(0px) brightness(1);
+    opacity: 0;
+  }
+}
+
+.liquid-metal-button:hover {
+  transform: perspective(1000px) rotateX(-5deg) rotateY(-2deg) translateY(-6px);
+  box-shadow: 
+    0 25px 50px rgba(55, 65, 81, 0.6), 
+    0 0 40px rgba(6, 255, 165, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #3a86ff, #06ffa5, #00d4aa);
+  border-color: rgba(6, 255, 165, 0.5);
+}
+
+.liquid-metal-button:active {
+  transform: perspective(1000px) rotateX(2deg) rotateY(1deg) translateY(-2px);
+  box-shadow: 
+    0 15px 30px rgba(55, 65, 81, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.liquid-metal-surface {
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.2) 25%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.3) 75%, 
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: liquidShimmer 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateZ(1px);
+}
+
+.liquid-metal-button:hover .liquid-metal-surface {
+  opacity: 1;
+}
+
+@keyframes liquidShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.morphing-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: morphShape 4s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateZ(2px);
+}
+
+.shape-1 {
+  width: 25px;
+  height: 25px;
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 20px;
+  height: 20px;
+  top: 60%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.shape-3 {
+  width: 30px;
+  height: 30px;
+  bottom: 20%;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.liquid-metal-button:hover .morphing-shape {
+  opacity: 1;
+}
+
+@keyframes morphShape {
+  0%, 100% { 
+    border-radius: 50%; 
+    transform: translateZ(2px) scale(1) rotate(0deg); 
+  }
+  25% { 
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+    transform: translateZ(2px) scale(1.2) rotate(90deg); 
+  }
+  50% { 
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; 
+    transform: translateZ(2px) scale(0.8) rotate(180deg); 
+  }
+  75% { 
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; 
+    transform: translateZ(2px) scale(1.1) rotate(270deg); 
+  }
+}
+
+.droplet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: dropletFall 2s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateZ(3px);
+}
+
+.liquid-metal-button:hover .droplet {
+  opacity: 1;
+}
+
+@keyframes dropletFall {
+  0% { 
+    transform: translateZ(3px) translateY(-25px) scale(0); 
+    opacity: 0;
+  }
+  50% { 
+    opacity: 1;
+  }
+  100% { 
+    transform: translateZ(3px) translateY(25px) scale(1); 
+    opacity: 0;
+  }
+}
+
+/* Self-Drawing Shapes Animations */
+@keyframes drawTriangle {
+  0% {
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 1000 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 1000 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawSquare {
+  0% {
+    stroke-dasharray: 0 800;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 800 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 800 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCircle {
+  0% {
+    stroke-dasharray: 0 628;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 628 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 628 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawHexagon {
+  0% {
+    stroke-dasharray: 0 600;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 600 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 600 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawStar {
+  0% {
+    stroke-dasharray: 0 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 200 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 200 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawDiamond {
+  0% {
+    stroke-dasharray: 0 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 400 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 400 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawSpiral {
+  0% {
+    stroke-dasharray: 0 300;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 300 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 300 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawWave {
+  0% {
+    stroke-dasharray: 0 900;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 900 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 900 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Floating animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(8px);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-8px) translateX(-5px);
+  }
+  66% {
+    transform: translateY(-12px) translateX(3px);
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-6px) translateX(4px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-2px);
+  }
+  75% {
+    transform: translateY(-4px) translateX(6px);
+  }
+}
+
+/* Animation classes */
+.animate-draw-triangle {
+  animation: drawTriangle 8s ease-in-out infinite;
+}
+
+.animate-draw-square {
+  animation: drawSquare 10s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-draw-circle {
+  animation: drawCircle 12s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-draw-hexagon {
+  animation: drawHexagon 9s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.animate-draw-star {
+  animation: drawStar 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-draw-diamond {
+  animation: drawDiamond 11s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+.animate-draw-spiral {
+  animation: drawSpiral 15s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-draw-wave {
+  animation: drawWave 13s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* New smaller shapes animations */
+.animate-draw-diamond2 {
+  animation: drawDiamond 7s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-circle2 {
+  animation: drawCircle 9s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-draw-square2 {
+  animation: drawSquare 8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-draw-diamond3 {
+  animation: drawDiamond 6s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.animate-draw-curve1 {
+  animation: drawSpiral 10s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-draw-diamond4 {
+  animation: drawDiamond 8s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.animate-draw-circle3 {
+  animation: drawCircle 7s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-draw-square3 {
+  animation: drawSquare 9s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-draw-diamond5 {
+  animation: drawDiamond 5s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
+.animate-draw-curve2 {
+  animation: drawSpiral 11s ease-in-out infinite;
+  animation-delay: 2.8s;
+}
+
+.animate-draw-diamond6 {
+  animation: drawDiamond 7s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-draw-circle4 {
+  animation: drawCircle 6s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.animate-draw-square4 {
+  animation: drawSquare 8s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+
+.animate-draw-diamond7 {
+  animation: drawDiamond 9s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.animate-draw-curve3 {
+  animation: drawSpiral 12s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-draw-diamond8 {
+  animation: drawDiamond 6s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.animate-draw-circle5 {
+  animation: drawCircle 5s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-draw-square5 {
+  animation: drawSquare 7s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-draw-diamond9 {
+  animation: drawDiamond 8s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-draw-curve4 {
+  animation: drawSpiral 9s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+
+.animate-draw-diamond10 {
+  animation: drawDiamond 4s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.animate-draw-circle6 {
+  animation: drawCircle 4s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-square6 {
+  animation: drawSquare 6s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-fast {
+  animation: floatFast 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Tiny shapes animations - very slow and varied */
+.animate-draw-tiny-diamond1 {
+  animation: drawDiamond 20s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.animate-draw-tiny-diamond2 {
+  animation: drawDiamond 18s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.animate-draw-tiny-diamond3 {
+  animation: drawDiamond 22s ease-in-out infinite;
+  animation-delay: 2.7s;
+}
+
+.animate-draw-tiny-diamond4 {
+  animation: drawDiamond 19s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-tiny-diamond5 {
+  animation: drawDiamond 21s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-draw-tiny-diamond6 {
+  animation: drawDiamond 17s ease-in-out infinite;
+  animation-delay: 3.2s;
+}
+
+.animate-draw-tiny-diamond7 {
+  animation: drawDiamond 23s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-draw-tiny-diamond8 {
+  animation: drawDiamond 16s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+
+.animate-draw-tiny-diamond9 {
+  animation: drawDiamond 24s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.animate-draw-tiny-diamond10 {
+  animation: drawDiamond 15s ease-in-out infinite;
+  animation-delay: 2.9s;
+}
+
+.animate-draw-tiny-circle1 {
+  animation: drawCircle 25s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-draw-tiny-circle2 {
+  animation: drawCircle 23s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-draw-tiny-circle3 {
+  animation: drawCircle 27s ease-in-out infinite;
+  animation-delay: 2.8s;
+}
+
+.animate-draw-tiny-circle4 {
+  animation: drawCircle 21s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-draw-tiny-circle5 {
+  animation: drawCircle 26s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-draw-tiny-circle6 {
+  animation: drawCircle 20s ease-in-out infinite;
+  animation-delay: 3.1s;
+}
+
+.animate-draw-tiny-circle7 {
+  animation: drawCircle 24s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-draw-tiny-circle8 {
+  animation: drawCircle 18s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+
+.animate-draw-tiny-circle9 {
+  animation: drawCircle 28s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-draw-tiny-circle10 {
+  animation: drawCircle 22s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+
+.animate-draw-tiny-square1 {
+  animation: drawSquare 26s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-draw-tiny-square2 {
+  animation: drawSquare 24s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-draw-tiny-square3 {
+  animation: drawSquare 29s ease-in-out infinite;
+  animation-delay: 2.9s;
+}
+
+.animate-draw-tiny-square4 {
+  animation: drawSquare 22s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-draw-tiny-square5 {
+  animation: drawSquare 27s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.animate-draw-tiny-square6 {
+  animation: drawSquare 21s ease-in-out infinite;
+  animation-delay: 3.3s;
+}
+
+.animate-draw-tiny-square7 {
+  animation: drawSquare 25s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.animate-draw-tiny-square8 {
+  animation: drawSquare 19s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.animate-draw-tiny-square9 {
+  animation: drawSquare 30s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
+.animate-draw-tiny-square10 {
+  animation: drawSquare 23s ease-in-out infinite;
+  animation-delay: 2.7s;
+}
+
+.animate-draw-tiny-curve1 {
+  animation: drawSpiral 28s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-draw-tiny-curve2 {
+  animation: drawSpiral 26s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.animate-draw-tiny-curve3 {
+  animation: drawSpiral 31s ease-in-out infinite;
+  animation-delay: 3.0s;
+}
+
+.animate-draw-tiny-curve4 {
+  animation: drawSpiral 24s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-tiny-curve5 {
+  animation: drawSpiral 29s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-draw-tiny-curve6 {
+  animation: drawSpiral 23s ease-in-out infinite;
+  animation-delay: 3.4s;
+}
+
+.animate-draw-tiny-curve7 {
+  animation: drawSpiral 27s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-draw-tiny-curve8 {
+  animation: drawSpiral 21s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+.animate-draw-tiny-curve9 {
+  animation: drawSpiral 32s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.animate-draw-tiny-curve10 {
+  animation: drawSpiral 25s ease-in-out infinite;
+  animation-delay: 2.8s;
+}
+
+.animate-draw-tiny-triangle1 {
+  animation: drawTriangle 30s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-draw-tiny-triangle2 {
+  animation: drawTriangle 28s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-draw-tiny-triangle3 {
+  animation: drawTriangle 33s ease-in-out infinite;
+  animation-delay: 3.1s;
+}
+
+.animate-draw-tiny-triangle4 {
+  animation: drawTriangle 26s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-draw-tiny-triangle5 {
+  animation: drawTriangle 31s ease-in-out infinite;
+  animation-delay: 2.0s;
+}
+
+.animate-draw-tiny-triangle6 {
+  animation: drawTriangle 25s ease-in-out infinite;
+  animation-delay: 3.5s;
+}
+
+.animate-draw-tiny-triangle7 {
+  animation: drawTriangle 29s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.animate-draw-tiny-triangle8 {
+  animation: drawTriangle 23s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+
+.animate-draw-tiny-triangle9 {
+  animation: drawTriangle 34s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-draw-tiny-triangle10 {
+  animation: drawTriangle 27s ease-in-out infinite;
+  animation-delay: 2.9s;
+}
+
+/* New unique shapes animations */
+.animate-draw-star4 {
+  animation: drawStar 16s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-draw-star5 {
+  animation: drawStar 18s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-draw-star6 {
+  animation: drawStar 14s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.animate-draw-cross1 {
+  animation: drawDiamond 20s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-cross2 {
+  animation: drawDiamond 22s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-draw-cross3 {
+  animation: drawDiamond 19s ease-in-out infinite;
+  animation-delay: 3.1s;
+}
+
+.animate-draw-arrow1 {
+  animation: drawTriangle 17s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-draw-arrow2 {
+  animation: drawTriangle 21s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.animate-draw-arrow3 {
+  animation: drawTriangle 18s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.animate-draw-heart1 {
+  animation: drawSpiral 25s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-draw-heart2 {
+  animation: drawSpiral 23s ease-in-out infinite;
+  animation-delay: 2.0s;
+}
+
+.animate-draw-heart3 {
+  animation: drawSpiral 27s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.animate-draw-lightning1 {
+  animation: drawTriangle 19s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-draw-lightning2 {
+  animation: drawTriangle 24s ease-in-out infinite;
+  animation-delay: 2.7s;
+}
+
+.animate-draw-lightning3 {
+  animation: drawTriangle 16s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.animate-draw-infinity1 {
+  animation: drawSpiral 28s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-draw-infinity2 {
+  animation: drawSpiral 26s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+
+.animate-draw-infinity3 {
+  animation: drawSpiral 30s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
+.animate-draw-crescent1 {
+  animation: drawSpiral 22s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.animate-draw-crescent2 {
+  animation: drawSpiral 25s ease-in-out infinite;
+  animation-delay: 2.8s;
+}
+
+.animate-draw-crescent3 {
+  animation: drawSpiral 20s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-draw-spiral1 {
+  animation: drawSpiral 29s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-draw-spiral2 {
+  animation: drawSpiral 24s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+.animate-draw-spiral3 {
+  animation: drawSpiral 27s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-draw-zigzag1 {
+  animation: drawWave 18s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-zigzag2 {
+  animation: drawWave 21s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+
+.animate-draw-zigzag3 {
+  animation: drawWave 16s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-draw-diamond2 {
+  animation: drawDiamond 15s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-draw-diamond3 {
+  animation: drawDiamond 17s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.animate-draw-circle2 {
+  animation: drawCircle 20s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-draw-circle3 {
+  animation: drawCircle 18s ease-in-out infinite;
+  animation-delay: 2.9s;
+}
+
+.animate-draw-square2 {
+  animation: drawSquare 19s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-draw-square3 {
+  animation: drawSquare 16s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.animate-draw-triangle2 {
+  animation: drawTriangle 22s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-draw-triangle3 {
+  animation: drawTriangle 20s ease-in-out infinite;
+  animation-delay: 3.0s;
+}
+
+.animate-draw-curve1 {
+  animation: drawSpiral 23s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-draw-curve2 {
+  animation: drawSpiral 21s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+
+/* Tiny unique shapes animations */
+.animate-draw-tiny-star {
+  animation: drawStar 32s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.animate-draw-tiny-cross {
+  animation: drawDiamond 30s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.animate-draw-tiny-arrow {
+  animation: drawTriangle 28s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+
+.animate-draw-tiny-heart {
+  animation: drawSpiral 35s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-draw-tiny-lightning {
+  animation: drawTriangle 26s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-draw-tiny-infinity {
+  animation: drawSpiral 33s ease-in-out infinite;
+  animation-delay: 2.7s;
+}
+
+.animate-draw-tiny-crescent {
+  animation: drawSpiral 31s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-draw-tiny-spiral {
+  animation: drawSpiral 29s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+
+.animate-draw-tiny-zigzag {
+  animation: drawWave 25s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-draw-tiny-circle {
+  animation: drawCircle 27s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-draw-tiny-square {
+  animation: drawSquare 24s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+.animate-draw-tiny-diamond {
+  animation: drawDiamond 26s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+/* Hero Background Pulse Effect */
+.hero-bg-pulse {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(227, 6, 19, 0.03) 0%,
+    rgba(227, 6, 19, 0.01) 30%,
+    transparent 70%
+  );
+  animation: heroPulse 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Enhanced responsive design improvements */
+@media (max-width: 768px) {
+  .stylish-headline {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .holographic-button,
+  .liquid-metal-button {
+    min-width: 180px;
+    padding: 0.625rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stylish-headline {
+    font-size: 2rem;
+  }
+  
+  .holographic-button,
+  .liquid-metal-button {
+    min-width: 160px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .stylish-headline,
+  .holographic-button,
+  .liquid-metal-button,
+  .hero-bg-pulse,
+  .holographic-scan-lines,
+  .holographic-glow,
+  .holographic-element,
+  .liquid-metal-surface,
+  .morphing-shape,
+  .droplet {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .holographic-button:hover,
+  .liquid-metal-button:hover {
+    transform: none !important;
+  }
+}
+
+/* Focus states for better accessibility */
+.holographic-button:focus-visible,
+.liquid-metal-button:focus-visible {
+  outline: 3px solid #e30613;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .stylish-headline {
+    background: #e30613;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: none;
+  }
+  
+  .holographic-button,
+  .liquid-metal-button {
+    background: #e30613;
+    border: 2px solid #ffffff;
+  }
+} 

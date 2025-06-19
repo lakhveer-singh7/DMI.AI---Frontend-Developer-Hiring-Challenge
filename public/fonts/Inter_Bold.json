@@ -1,0 +1,76 @@
+{
+  "glyphs": {
+    "I": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 0 0 l 600 0 l 600 100 l 0 100 l 0 0 z"
+    },
+    "N": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 0 0 l 100 0 l 100 800 l 0 800 l 0 0 m 100 0 l 600 800 l 500 800 l 500 0 l 600 0 l 600 800 l 500 800"
+    },
+    "T": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 0 0 l 600 0 l 600 100 l 350 100 l 350 800 l 250 800 l 250 100 l 0 100 l 0 0 z"
+    },
+    "E": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 0 0 l 600 0 l 600 100 l 100 100 l 100 300 l 500 300 l 500 400 l 100 400 l 100 700 l 600 700 l 600 800 l 0 800 l 0 0 z"
+    },
+    "L": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 0 0 l 100 0 l 100 700 l 600 700 l 600 800 l 0 800 l 0 0 z"
+    },
+    "G": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 100 0 l 500 0 l 500 100 l 100 100 l 100 700 l 500 700 l 500 600 l 300 600 l 300 500 l 400 500 l 400 200 l 100 200 l 100 0 z"
+    },
+    "A": {
+      "ha": 600,
+      "x_min": 0,
+      "x_max": 600,
+      "o": "m 300 0 l 600 800 l 500 800 l 400 600 l 200 600 l 100 800 l 0 800 l 300 0 m 250 100 l 350 500 l 250 500 l 250 100 z"
+    },
+    " ": {
+      "ha": 300,
+      "x_min": 0,
+      "x_max": 0,
+      "o": ""
+    }
+  },
+  "familyName": "Inter",
+  "ascender": 800,
+  "descender": -200,
+  "underlinePosition": -100,
+  "underlineThickness": 50,
+  "boundingBox": {
+    "yMin": -200,
+    "yMax": 800,
+    "xMin": 0,
+    "xMax": 600
+  },
+  "resolution": 1000,
+  "original_font_information": {
+    "format": 0,
+    "copyright": "Inter Bold",
+    "fontFamily": "Inter",
+    "fontSubfamily": "Bold",
+    "uniqueID": "Inter-Bold",
+    "fullName": "Inter Bold",
+    "version": "1.0",
+    "postScriptName": "Inter-Bold"
+  },
+  "cssFontWeight": "bold",
+  "cssFontStyle": "normal"
+} 

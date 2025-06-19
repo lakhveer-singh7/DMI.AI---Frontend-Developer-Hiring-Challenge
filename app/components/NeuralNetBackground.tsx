@@ -190,7 +190,7 @@ function FloatingLogos({ count = 8 }) {
   const textures = useTexture(LOGO_URLS) as THREE.Texture[];
   // Each logo gets its own animation state
   const logos = useRef(
-    Array.from({ length: count }, (_, i) => ({
+    Array.from({ length: count }, () => ({
       t: Math.random() * 100,
       x: Math.random() * 10 - 5,
       y: Math.random() * 6 - 3,
